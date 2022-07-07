@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.app_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.player_raiting {
+    height: 30px;
+    width: 300px;
+}
+
+.opponent_raiting {
+    height: 30px;
+    width: 300px;
+}
+
+.play_container {
+    display: grid;
+    grid-template-columns: 330px 330px;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: 330px;
+}
+
+.battlefield {
+    position: relative;
+}
+
+.battlefield_column {
+    position: relative;
+	width: 32px;
+	height: 32px;
+	border: 1px solid #42424626;
+}
+
+.battlefield_table {
+	border-collapse: collapse;
+	background:#c0c4f226;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marker {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.marker_row {
+	left: -35px;
+}
+
+.marker_column {
+	top: -35px;
+}
+
+.pushable_ships, .pushable_play {
+    width: 150px;
+    height: 50px;;
+}
+
+.ship {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: -3px;
+	border: 3px solid #0400ff;
+	background: rgba(0, 55, 255, 0.45);
+	width: 32px;
+	height: 32px;
+}
+
+.ship-row-2 {
+	width: 65px;
+}
+
+.ship-row-3 {
+	width: 98px;
+}
+
+.ship-row-4 {
+	width: 131px;
+}
+
+.ship-column-2 {
+	height: 65px;
+}
+
+.ship-column-3 {
+	height: 98px;
+}
+
+.ship-column-4 {
+	height: 131px;
+}
