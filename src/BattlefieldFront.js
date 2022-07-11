@@ -110,5 +110,17 @@ class BattlefieldFront extends Battlefield {
 
 		return true;
 	}
+
+	removeShot(shot) {
+		if (!super.removeShot(shot)) {
+			return false;
+		}
+
+		if (Array.prototype.includes.call(this.polygon.children, shot.div)) {
+			shot.div.remove();
+		}
+
+		return true;
+	}
 	
 }
