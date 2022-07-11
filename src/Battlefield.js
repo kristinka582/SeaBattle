@@ -5,7 +5,7 @@
 
 class Battlefield {
     ships = [];
-	shoots = [];
+	shots = [];
 
 	#matrix = null;
     #changed = true;
@@ -26,6 +26,8 @@ class Battlefield {
 					y,
 					ship: null,
 					free: true,
+					wounded: false,
+					shoted: false,
 				};
 
 				row.push(item);
@@ -58,6 +60,15 @@ class Battlefield {
 						item.free = false;
 					}
 				}
+			}
+		}
+
+		for (const { x, y } of this.shots) {
+			const item = matrix[y][x];
+			item.shoted = true;
+
+			if (item.ship) {
+				item.wounded = true;
 			}
 		}
 
@@ -140,14 +151,14 @@ class Battlefield {
 		return ships.length;
 	}
 
-	removeAllShoots() {
-		const shoots = this.shoots.slice();
+	removeAllShots() {
+		const shots = this.shots.slice();
 
-		for (const shoot of shoots) {
-			this.removeShoot(shoot);
+		for (const shot of shots) {
+			this.removeShot(shot);
 		}
 
-		return shoots.length;
+		return shots.length;
 	}
 
 	randomize(ShipClass = Ship) {
@@ -166,5 +177,77 @@ class Battlefield {
 				}
 			}
 		}
+	}
+
+	addShot(shot) {
+		for (const { x, y } of this.shots) {
+			if (x === shot.x && y === shot.y) {
+				return false;
+			}
+		}
+
+		this.shots.push(shot);
+
+		const matrix = this.matrix;
+		const { x, y } = shot;
+
+		if (matrix[y][x].ship) {
+			shot.setVariant("ранен");
+
+			const { ship } = matrix[y][x];
+			const dx = ship.direction === "row";
+			const dy = ship.direction === "column";
+
+			let killed = true;
+
+			for (let i = 0; i < ship.size; i++) {
+				const cx = ship.x + dx * i;
+				const cy = ship.y + dy * i;
+				const item = matrix[cy][cx];
+
+				if (!item.wounded) {
+					killed = false;
+					break;
+				}
+			}
+
+			if (killed) {
+				ship.killed = true;
+
+				for (let i = 0; i < ship.size; i++) {
+					const cx = ship.x + dx * i;
+					const cy = ship.y + dy * i;
+
+					const shot = this.shots.find(
+						(shot) => shot.x === cx && shot.y === cy
+					);
+					shot.setVariant("убит");
+				}
+			}
+		}
+
+
+		return true;
+	}
+
+	removeShot(shot) {
+		if (!this.shots.includes(shot)) {
+			return false;
+		}
+
+		const index = this.shots.indexOf(shot);
+		this.shots.splice(index, 1);
+
+		return true;
+	}
+
+	removeAllShots() {
+		const shots = this.shots.slice();
+
+		for (const shot of shots) {
+			this.removeShot(shot);
+		}
+
+		return shots.length;
 	}
 }

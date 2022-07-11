@@ -26,10 +26,6 @@ class App {
 			this.conditions[conditionName] = new conditionClass(conditionName, this);
 		}
 
-		for (const condition of Object.values(this.conditions)) {
-			condition.init();
-		}
-
 		requestAnimationFrame(() => this.tick());
     }
 
@@ -40,10 +36,6 @@ class App {
 
 		if (!this.conditions.hasOwnProperty(conditionName)) {
 			return false;
-		}
-
-		if (this.activeCondition) {
-			this.activeCondition.stop();
 		}
 
 		const condition = this.conditions[conditionName];

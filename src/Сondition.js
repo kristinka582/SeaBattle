@@ -10,11 +10,7 @@ class Condition {
 		Object.assign(this, { name, app });
 	}
 
-	init() {}
-
 	start() {}
 
 	update() {}
-
-	stop() {}
 }

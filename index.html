@@ -8,16 +8,24 @@
     <body>
         <main class="app">
             <h1 class="app_title">Морской бой</h1>
+            <div class="button_container_bot" style="display: none">
+                <h2 class="front_move">Ваш ход</h2>
+            </div>
             <div class="play_container">
                 <div data-side="player"></div>
                 <div data-side="opponent"></div>
             </div>
-            <div class="button_container">
+            <div class="button_container_praparation">
                 <button class="pushable_ships">
                     <span class="front">Расставить корабли</span>
                 </button>
                 <button class="pushable_play" style="display: none">
                     <span class="front">Начать игру</span>
+                </button>
+            </div>
+            <div class="button_container_bot" style="display: none">
+                <button class="pushable_again">
+                    <span class="front">Сдаться</span>
                 </button>
             </div>
         </main>
@@ -28,10 +36,13 @@
         <script type="text/javascript" src="src/App.js"></script>
         <script type="text/javascript" src="src/Сondition.js"></script>
         <script type="text/javascript" src="src/PreparationCondition.js"></script>
+        <script type="text/javascript" src="src/BotCondition.js"></script>
         <script type="text/javascript" src="src/Battlefield.js"></script>
         <script type="text/javascript" src="src/BattlefieldFront.js"></script>
         <script type="text/javascript" src="src/Ship.js"></script>
         <script type="text/javascript" src="src/ShipFront.js"></script>
+        <script type="text/javascript" src="src/Shot.js"></script>
+        <script type="text/javascript" src="src/ShotFront.js"></script>
         <script type="text/javascript" src="src/script.js"></script>
     </body>
 </html>

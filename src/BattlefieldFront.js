@@ -94,5 +94,21 @@ class BattlefieldFront extends Battlefield {
 
 		return true;
 	}
+
+	addShot(shot, x, y) {
+		if (!super.addShot(shot, x, y)) {
+			return false;
+		}
+		this.polygon.append(shot.div);
+
+		const cell = this.cells[shot.y][shot.x];
+		const cellRect = cell.getBoundingClientRect();
+		const rootRect = this.root.getBoundingClientRect();
+
+		shot.div.style.left = `${cellRect.left - rootRect.left}px`;
+		shot.div.style.top = `${cellRect.top - rootRect.top}px`;
+
+		return true;
+	}
 	
 }
