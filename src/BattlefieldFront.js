@@ -99,9 +99,11 @@ class BattlefieldFront extends Battlefield {
 	}
 
 	addShot(shot, x, y) {
+
 		if (!super.addShot(shot, x, y)) {
 			return false;
 		}
+		
 		this.polygon.append(shot.div);
 
 		const cell = this.cells[shot.y][shot.x];

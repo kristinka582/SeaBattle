@@ -21,8 +21,6 @@ class ShotFront extends Shot {
 		}
 
 		this.variant = variant;
-
-		// this.div.classList.remove("shot-missed", "shot-wounded", "shot-killed");
 		this.div.textContent = "";
 
 		if (this.variant === "промах") {
@@ -32,7 +30,7 @@ class ShotFront extends Shot {
 			this.div.classList.add("shot_wounded");
 		} else if (this.variant === "убит") {
 			this.div.classList.add("shot_wounded", "shot_killed");
-			this.div.textContent = "✕";
+			this.div.textContent = "💥";
 		}
 
 		return true;

@@ -34,12 +34,29 @@
 
 .play_container {
     display: grid;
-    grid-template-columns: 330px 330px;
+    grid-template-columns: 330px 150px 330px;
     justify-content: center;
-    gap: 150px;
     margin-top: 50px;
     margin-bottom: 50px;
     height: 330px;
+}
+
+.counter_container {
+	display: flex;
+    width: 150px;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.count_play {
+	display: flex;
+    justify-content: center;
+}
+
+.count_play_total {
+	text-decoration: overline;
 }
 
 .battlefield {
@@ -96,8 +113,18 @@
 
 .pushable_ships, .pushable_play, .pushable_again {
     width: 150px;
-    height: 50px;;
+    height: 50px;
+	border-radius: 5px;
+	background: #aaa9f6a1;
+	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+	7px 7px 20px 0px rgba(0,0,0,.1),
+	4px 4px 5px 0px rgba(0,0,0,.1);
 }
+
+.pushable_ships:hover, .pushable_play:hover, .pushable_again:hover {
+ 	background: linear-gradient(0deg, rgb(155, 155, 249) 0%, rgba(184, 215, 249, 0.727) 100%);
+ }
+
 
 .ship {
 	position: absolute;
@@ -155,7 +182,7 @@
 
 .shot_killed {
 	color: red;
-	font-size: 32px;
+	font-size: 25px;
 	margin: -3px;
 	border: 3px solid red;
 }

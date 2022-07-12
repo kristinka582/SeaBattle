@@ -161,16 +161,6 @@ class Battlefield {
 		return ships.length;
 	}
 
-	removeAllShots() {
-		const shots = this.shots.slice();
-
-		for (const shot of shots) {
-			this.removeShot(shot);
-		}
-
-		return shots.length;
-	}
-
 	randomize(ShipClass = Ship) {
 		this.removeAllShips();
 		for (let size = 4; size >= 1; size--) {
