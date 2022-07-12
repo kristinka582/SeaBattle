@@ -12,8 +12,9 @@ class BattlefieldFront extends Battlefield {
 	ships_cell = null;
 	polygon = null;
 	cells = [];
+	showShipsBot = true;
 
-	constructor() {
+	constructor(showShipsBot = true) {
 		super();
 
 		const root = document.createElement("div");
@@ -28,7 +29,7 @@ class BattlefieldFront extends Battlefield {
 		const polygon = document.createElement("div");
 		polygon.classList.add("battlefield_polygon");
 
-		Object.assign(this, { root, table, ships_cell, polygon });
+		Object.assign(this, { root, table, ships_cell, polygon, showShipsBot });
 		root.append(table, ships_cell, polygon);
 
 		for (let y = 0; y < 10; y++) {
@@ -77,19 +78,21 @@ class BattlefieldFront extends Battlefield {
 			return false;
 		}
 
-		this.ships_cell.append(ship.div);
+		if (this.showShipsBot) {
+			this.ships_cell.append(ship.div);
 
-		if (ship.placed) {
-			const cell = this.cells[y][x];
-			const cellRect = cell.getBoundingClientRect();
-			const rootRect = this.root.getBoundingClientRect();
+			if (ship.placed) {
+				const cell = this.cells[y][x];
+				const cellRect = cell.getBoundingClientRect();
+				const rootRect = this.root.getBoundingClientRect();
 
-			ship.div.style.left = `${cellRect.left - rootRect.left}px`;
-			ship.div.style.top = `${cellRect.top - rootRect.top}px`;
-		} else {
-			ship.setDirection("row");
-			ship.div.style.left = `${ship.startX}px`;
-			ship.div.style.top = `${ship.startY}px`;
+				ship.div.style.left = `${cellRect.left - rootRect.left}px`;
+				ship.div.style.top = `${cellRect.top - rootRect.top}px`;
+			} else {
+				ship.setDirection("row");
+				ship.div.style.left = `${ship.startX}px`;
+				ship.div.style.top = `${ship.startY}px`;
+			}
 		}
 
 		return true;
@@ -121,6 +124,11 @@ class BattlefieldFront extends Battlefield {
 		}
 
 		return true;
+	}
+
+	clear() {
+		this.removeAllShots();
+		this.removeAllShips();
 	}
 	
 }

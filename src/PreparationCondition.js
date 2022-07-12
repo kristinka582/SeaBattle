@@ -22,6 +22,7 @@
     startBot() {
       const hiddenClassPreparation = document.querySelector('.button_container_praparation');
       hiddenClassPreparation.style.display = "none";
+      
       this.app.start('bot');
     }
 }

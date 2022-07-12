@@ -15,7 +15,7 @@ class App {
     constructor(conditions = {}) {
 		const mouse = new MouseCoordinates(document.body);
 		const player = new BattlefieldFront();
-		const opponent = new BattlefieldFront();
+		const opponent = new BattlefieldFront(false);
 
         Object.assign(this, { mouse, player, opponent });
 

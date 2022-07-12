@@ -78,6 +78,16 @@ class Battlefield {
 		return this.#matrix;
 	}
 
+	get loser() {
+		for (const ship of this.ships) {
+			if (!ship.killed) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	inField(x, y) {
 		const isNumber = (n) =>
 			parseInt(n) === n && !isNaN(n) && ![Infinity, -Infinity].includes(n);

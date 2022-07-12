@@ -17,7 +17,8 @@
 }
 
 .front_move {
-	width: 90px;
+	width: 200px;
+	text-align: center;
 	border-bottom: 2px solid currentColor;
 }
 
@@ -148,11 +149,13 @@
 }
 
 .shot_wounded {
-	background: #fbdede;
+	background: #fa9090;
 	z-index: 1;
 }
 
 .shot_killed {
+	color: red;
+	font-size: 32px;
 	margin: -3px;
 	border: 3px solid red;
 }

@@ -32,6 +32,7 @@ class ShotFront extends Shot {
 			this.div.classList.add("shot_wounded");
 		} else if (this.variant === "убит") {
 			this.div.classList.add("shot_wounded", "shot_killed");
+			this.div.textContent = "✕";
 		}
 
 		return true;
