@@ -1,12 +1,16 @@
 {
-  "dependencies": {
-    "express": "^4.18.1"
-  },
   "name": "seabattle",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "type": "module",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "scripts": {
+    "run": "node server.js"
+  },
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {}
 }
