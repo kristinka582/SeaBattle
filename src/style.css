@@ -1,18 +1,18 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .app {
-    width: 100vw;
-    height: 100vh;
+	width: 100vw;
+	height: 100vh;
 }
 
 .app_title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
 	margin-bottom: 90px;
 }
 
@@ -23,36 +23,36 @@
 }
 
 .player_raiting {
-    height: 30px;
-    width: 300px;
+	height: 30px;
+	width: 300px;
 }
 
 .opponent_raiting {
-    height: 30px;
-    width: 300px;
+	height: 30px;
+	width: 300px;
 }
 
 .play_container {
-    display: grid;
-    grid-template-columns: 330px 150px 330px;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    height: 330px;
+	display: grid;
+	grid-template-columns: 330px 150px 330px;
+	justify-content: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	height: 330px;
 }
 
 .counter_container {
 	display: flex;
-    width: 150px;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
+	width: 150px;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+	flex-direction: column;
 }
 
 .count_play {
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 }
 
 .count_play_total {
@@ -60,11 +60,11 @@
 }
 
 .battlefield {
-    position: relative;
+	position: relative;
 }
 
 .battlefield_column {
-    position: relative;
+	position: relative;
 	width: 32px;
 	height: 32px;
 	border: 1px solid #42424626;
@@ -72,7 +72,7 @@
 
 .battlefield_table {
 	border-collapse: collapse;
-	background:#c0c4f226;
+	background: #c0c4f226;
 }
 
 .battlefield_item_active {
@@ -80,15 +80,15 @@
 }
 
 .button_container_praparation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .button_container_bot {
 	display: flex;
 	justify-content: center;
-    align-items: center;
+	align-items: center;
 }
 
 .marker {
@@ -112,18 +112,18 @@
 }
 
 .pushable_ships, .pushable_play, .pushable_again {
-    width: 150px;
-    height: 50px;
+	width: 150px;
+	height: 50px;
 	border-radius: 5px;
 	background: #aaa9f6a1;
-	box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-	7px 7px 20px 0px rgba(0,0,0,.1),
-	4px 4px 5px 0px rgba(0,0,0,.1);
+	box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+	7px 7px 20px 0px rgba(0, 0, 0, .1),
+	4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 .pushable_ships:hover, .pushable_play:hover, .pushable_again:hover {
- 	background: linear-gradient(0deg, rgb(155, 155, 249) 0%, rgba(184, 215, 249, 0.727) 100%);
- }
+	background: linear-gradient(0deg, rgb(155, 155, 249) 0%, rgba(184, 215, 249, 0.727) 100%);
+}
 
 
 .ship {
